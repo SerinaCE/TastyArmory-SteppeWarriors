@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Medieval Overhaul</li>
+		</mods>
+        <match Class="PatchOperationSequence">
+        <operations>
+
+            <!-- Axe -->
+            <li Class="PatchOperationReplace">
+                <xpath>Defs/ThingDef[defName="TA_Axe"]/recipeMaker/researchPrerequisite</xpath>
+                    <value>
+                        <researchPrerequisite Inherit="False">DankPyon_BasicBlades</researchPrerequisite>
+                    </value>
+            </li>
+
+            <!-- Lance -->
+            <li Class="PatchOperationReplace">
+                <xpath>Defs/ThingDef[defName="TA_Lance"]/recipeMaker/researchPrerequisite</xpath>
+                    <value>
+                        <researchPrerequisite Inherit="False">DankPyon_MilitaryPolearms</researchPrerequisite>
+                    </value>
+            </li>
+
+            <!-- Mace -->
+            <li Class="PatchOperationReplace">
+                <xpath>Defs/ThingDef[defName="TA_Mace"]/recipeMaker/researchPrerequisite</xpath>
+                    <value>
+                        <researchPrerequisite Inherit="False">DankPyon_BasicMaces</researchPrerequisite>
+                    </value>
+            </li>
+
+            <!-- Saber -->
+            <li Class="PatchOperationReplace">
+                <xpath>Defs/ThingDef[defName="TA_SteppeSaber"]/recipeMaker/researchPrerequisite</xpath>
+                    <value>
+                        <researchPrerequisite Inherit="False">DankPyon_MilitaryBlades</researchPrerequisite>
+                    </value>
+            </li>
+
+        </operations>
+    </match>
+</Operation>
+
+</Patch>

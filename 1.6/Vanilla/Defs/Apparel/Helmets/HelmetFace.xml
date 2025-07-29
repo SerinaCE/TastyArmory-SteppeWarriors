@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	<ThingDef ParentName="ArmorHelmetMakeableBase" Name="TA_HelmetFace" Abstract="True">
+		<label>masked helmet</label>
+		<description>.</description>
+		<possessionCount>1</possessionCount>
+		<recipeMaker>
+			<recipeUsers>
+				<li>ElectricSmithy</li>
+				<li>FueledSmithy</li>
+			</recipeUsers>
+			<researchPrerequisite>PlateArmor</researchPrerequisite>
+			<unfinishedThingDef>UnfinishedMetallicTechArmor</unfinishedThingDef>
+			<skillRequirements>
+				<Crafting>7</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<techLevel>Medieval</techLevel>
+		<costStuffCount>65</costStuffCount>
+		<stuffCategories>
+			<li>Metallic</li>
+		</stuffCategories>
+		<statBases>
+			<MaxHitPoints>150</MaxHitPoints>
+			<WorkToMake>10000</WorkToMake>
+			<Mass>2.85</Mass>
+			<StuffEffectMultiplierArmor>0.9</StuffEffectMultiplierArmor>
+			<StuffEffectMultiplierInsulation_Cold>0.12</StuffEffectMultiplierInsulation_Cold>
+			<StuffEffectMultiplierInsulation_Heat>0.12</StuffEffectMultiplierInsulation_Heat>
+			<EquipDelay>1</EquipDelay>
+		</statBases>
+		<thingCategories>
+			<li>ApparelArmor</li>
+		</thingCategories>
+		<apparel>
+			<useWornGraphicMask>true</useWornGraphicMask>
+      		<parentTagDef>ApparelHead</parentTagDef>
+			<bodyPartGroups>
+				<li>FullHead</li>
+				<li>Neck</li>
+			</bodyPartGroups>
+			<layers>
+				<li>Overhead</li>
+			</layers>
+			<tags>
+				<li>MedievalMilitary</li>
+				<li>MedievalArmorDecent</li>
+				<li MayRequire="Ludeon.RimWorld.Royalty">Royal</li>
+				<li MayRequire="Ludeon.RimWorld.Royalty">RoyalTier2</li>
+				<li MayRequire="Ludeon.RimWorld.Royalty">RoyalTier5</li>
+			</tags>
+			<defaultOutfitTags>
+				<li>Soldier</li>
+			</defaultOutfitTags>
+		</apparel>
+		<colorGenerator Class="ColorGenerator_StandardApparel" />
+		<tradeTags>
+			<li>Clothing</li>
+			<li>Armor</li>
+		</tradeTags>
+	</ThingDef>
+
+	
+	<ThingDef ParentName="TA_HelmetFace">
+		<defName>TA_HelmetFaceClosed</defName>
+		<graphicData>
+			<texPath>Apparel/Helmets/TA_HelmetFace/TA_HelmetFaceClosed</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<apparel>
+			<wornGraphicPath>Apparel/Helmets/TA_HelmetFace/TA_HelmetFaceClosed</wornGraphicPath>
+		</apparel>
+		<comps>
+			<li Class="VEF.Apparels.CompProperties_SwitchApparel" MayRequire="oskarpotocki.vanillafactionsexpanded.core">
+				<SwitchTo>TA_HelmetFaceOpen</SwitchTo>
+				<graphicPath>Apparel/Helmets/TA_HelmetFace/TA_HelmetFaceOpen</graphicPath>
+				<Label>open visor</Label>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<ThingDef ParentName="TA_HelmetFace">
+		<defName>TA_HelmetFaceOpen</defName>
+		<graphicData>
+			<texPath>Apparel/Helmets/TA_HelmetFace/TA_HelmetFaceOpen</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<recipeMaker Inherit="False" />
+		<apparel>
+			<wornGraphicPath>Apparel/Helmets/TA_HelmetFace/TA_HelmetFaceOpen</wornGraphicPath>
+		</apparel>
+		<comps>
+			<li Class="VEF.Apparels.CompProperties_SwitchApparel" MayRequire="oskarpotocki.vanillafactionsexpanded.core">
+				<SwitchTo>TA_HelmetFaceClosed</SwitchTo>
+				<graphicPath>Apparel/Helmets/TA_HelmetFace/TA_HelmetFaceClosed</graphicPath>
+				<Label>close visor</Label>
+			</li>
+		</comps>
+	</ThingDef>
+	
+</Defs>

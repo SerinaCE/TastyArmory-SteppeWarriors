@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<ThingStyleDef>
+		<defName>TA_RattanShield_Bands</defName>
+		<graphicData>
+			<texPath>Apparel/Accessories/TA_RattanShield/TA_RattanShield_Bands</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+		</graphicData>
+	</ThingStyleDef>
+  
+	<ThingStyleDef>
+		<defName>TA_RattanShield_Bare</defName>
+		<graphicData>
+			<texPath>Apparel/Accessories/TA_RattanShield/TA_RattanShield_Bare</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+		</graphicData>
+	</ThingStyleDef>
+  
+	<ThingStyleDef>
+		<defName>TA_RattanShield_Flower</defName>
+		<graphicData>
+			<texPath>Apparel/Accessories/TA_RattanShield/TA_RattanShield_Flower</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+		</graphicData>
+	</ThingStyleDef>
+
+	<ThingDef ParentName="ShieldBase">
+		<defName>TA_Apparel_RattanShield</defName>
+		<label>rattan shield</label>
+		<description>.</description>
+		<graphicData>
+			<texPath>Apparel/Accessories/TA_RattanShield/TA_RattanShield_Covered</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>0.70</drawSize>
+		</graphicData>
+		<techLevel>Medieval</techLevel>
+		<costList>
+			<WoodLog>30</WoodLog>
+			<Steel>8</Steel>
+		</costList>
+		<stuffCategories>
+			<li>Leathery</li>
+		</stuffCategories>
+		<costStuffCount>15</costStuffCount>
+		<possessionCount>1</possessionCount>
+		<recipeMaker>
+			<researchPrerequisite>Smithing</researchPrerequisite>
+			<recipeUsers>
+				<li>FueledSmithy</li>
+				<li>ElectricSmithy</li>
+			</recipeUsers>
+		</recipeMaker>
+		<statBases>
+			<WorkToMake>3000</WorkToMake>
+			<MaxHitPoints>100</MaxHitPoints>
+			<StuffEffectMultiplierArmor>2</StuffEffectMultiplierArmor>
+			<ArmorRating_Sharp>1.2</ArmorRating_Sharp>
+			<ArmorRating_Blunt>3</ArmorRating_Blunt>
+			<Mass>2.5</Mass>
+			<Bulk>8</Bulk>
+			<WornBulk>1</WornBulk>
+		</statBases>
+		<equippedStatOffsets>
+			<ReloadSpeed>-0.2</ReloadSpeed>
+			<MeleeHitChance>-1</MeleeHitChance>
+			<ShootingAccuracyPawn>-0.15</ShootingAccuracyPawn>
+			<AimingAccuracy>-0.08</AimingAccuracy>
+			<Suppressability>-0.25</Suppressability>
+			<MeleeCritChance>-0.05</MeleeCritChance>
+			<MeleeParryChance>1.0</MeleeParryChance>
+		</equippedStatOffsets>
+		<randomStyleChance>0.75</randomStyleChance>
+		<randomStyle>
+			<li>
+				<styleDef>TA_RattanShield_Bands</styleDef>
+			</li>
+			<li>
+				<styleDef>TA_RattanShield_Bare</styleDef>
+			</li>
+			<li>
+				<styleDef>TA_RattanShield_Flower</styleDef>
+			</li>
+		</randomStyle>
+		<apparel>
+			<drawData>
+				<defaultData>
+					<layer>80</layer>
+				</defaultData>
+			</drawData>
+			<developmentalStageFilter>Child, Adult</developmentalStageFilter>
+			<tags>
+				<li>MedievalShield</li>
+			</tags>
+		</apparel>
+		<modExtensions>
+			<li Class="CombatExtended.ShieldDefExtension">
+				<shieldCoverage>
+					<li>Hands</li>
+					<li>Arms</li>
+					<li>Shoulders</li>
+					<li>Torso</li>
+					<li>Neck</li>
+				</shieldCoverage>
+			</li>
+		</modExtensions>
+		<colorGenerator Class="ColorGenerator_StandardApparel" />
+		<tradeTags>
+			<li>Armor</li>
+		</tradeTags>
+	</ThingDef>
+
+</Defs>

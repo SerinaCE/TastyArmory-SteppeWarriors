@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingStyleDef>
+		<defName>TA_MaceB</defName>
+		<graphicData>
+			<texPath>Weapons/TA_Mace/TA_MaceSimpleB</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+		</graphicData>
+	</ThingStyleDef>
+
+	<ThingStyleDef>
+		<defName>TA_MaceC</defName>
+		<graphicData>
+			<texPath>Weapons/TA_Mace/TA_MaceSimpleC</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+		</graphicData>
+	</ThingStyleDef>
+
+	<ThingDef ParentName="BaseMeleeWeapon_Blunt_Quality">
+		<defName>TA_Mace</defName>
+		<label>mace</label>
+		<description>.</description>
+		<possessionCount>1</possessionCount>
+		<graphicData>
+			<texPath>Weapons/TA_Mace/TA_MaceSimpleA</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>0.80</drawSize>
+		</graphicData>
+		<equippedAngleOffset>-65</equippedAngleOffset>
+		<randomStyleChance>0.50</randomStyleChance>
+		<randomStyle>
+			<li>
+				<styleDef>TA_MaceB</styleDef>
+			</li>
+			<li>
+				<styleDef>TA_MaceC</styleDef>
+			</li>
+		</randomStyle>
+		<techLevel>Medieval</techLevel>
+		<costStuffCount>50</costStuffCount>
+		<statBases>
+			<WorkToMake>6000</WorkToMake>
+			<Mass>1.25</Mass>
+			<Bulk>3.5</Bulk>
+			<MeleeCounterParryBonus>0.24</MeleeCounterParryBonus>
+		</statBases>
+		<recipeMaker>
+			<researchPrerequisite>Smithing</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>3</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<stuffCategories>
+			<li>Metallic_Weapon</li>
+		</stuffCategories>
+		<weaponTags>
+			<li>MedievalMeleeDecent</li>
+			<li>CE_OneHandedWeapon</li>
+		</weaponTags>
+		<weaponClasses>
+			<li>Melee</li>
+		</weaponClasses>
+		<tools>
+			<li Class="CombatExtended.ToolCE">
+				<label>handle</label>
+				<capacities>
+					<li>Poke</li>
+				</capacities>
+				<power>2</power>
+				<chanceFactor>0.33</chanceFactor>
+				<cooldownTime>1.59</cooldownTime>
+				<armorPenetrationBlunt>0.625</armorPenetrationBlunt>
+				<linkedBodyPartsGroup>Handle</linkedBodyPartsGroup>
+			</li>
+			<li Class="CombatExtended.ToolCE">
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>15</power>
+				<cooldownTime>1.9</cooldownTime>
+				<armorPenetrationBlunt>5.625</armorPenetrationBlunt>
+				<linkedBodyPartsGroup>Head</linkedBodyPartsGroup>
+			</li>
+		</tools>
+		<equippedStatOffsets>
+			<MeleeCritChance>0.42</MeleeCritChance>
+			<MeleeParryChance>0.24</MeleeParryChance>
+			<MeleeDodgeChance>0.2</MeleeDodgeChance>
+		</equippedStatOffsets>
+	</ThingDef>
+
+</Defs>

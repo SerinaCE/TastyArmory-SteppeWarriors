@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingStyleDef>
+		<defName>TA_AxeB</defName>
+		<graphicData>
+			<texPath>Weapons/TA_Fokos/TA_FokosB</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+		</graphicData>
+	</ThingStyleDef>
+
+	<ThingStyleDef>
+		<defName>TA_AxeC</defName>
+		<graphicData>
+			<texPath>Weapons/TA_Fokos/TA_FokosC</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+		</graphicData>
+	</ThingStyleDef>
+
+	<ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+		<defName>TA_Axe</defName>
+		<label>axe</label>
+		<description>.</description>
+		<techLevel>Medieval</techLevel>
+		<graphicData>
+			<texPath>Weapons/TA_Fokos/TA_FokosA</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>0.85</drawSize>
+		</graphicData>
+		<equippedAngleOffset>-65</equippedAngleOffset>
+		<randomStyleChance>0.66</randomStyleChance>
+		<randomStyle>
+			<li>
+				<styleDef>TA_AxeB</styleDef>
+			</li>
+			<li>
+				<styleDef>TA_AxeC</styleDef>
+			</li>
+		</randomStyle>
+		<stuffCategories>
+			<li>Metallic</li>
+		</stuffCategories>
+		<costStuffCount>50</costStuffCount>
+		<statBases>
+			<WorkToMake>7000</WorkToMake>
+			<Mass>1.5</Mass>
+		</statBases>
+		<recipeMaker>
+			<researchPrerequisite>Smithing</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>3</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<weaponTags>
+			<li>MedievalMeleeDecent</li>
+			<li>MedievalMeleeBasic</li>
+			<li>Axe</li>
+		</weaponTags>
+		<tools>
+			<li>
+				<label>shaft</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>13</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			  <li>
+				<label>point</label>
+				<capacities>
+				  <li>Stab</li>
+				</capacities>
+				<power>14</power>
+				<cooldownTime>2</cooldownTime>
+			  </li>
+			  <li>
+				<label>head</label>
+				<capacities>
+				  <li>Demolish</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>1</cooldownTime>
+			  </li>
+		</tools>
+	</ThingDef>
+
+</Defs>

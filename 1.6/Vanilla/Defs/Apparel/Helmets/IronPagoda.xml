@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	<ThingDef ParentName="ArmorHelmetMakeableBase" Name="TA_IronPagoda" Abstract="True">
+		<label>iron pagoda helmet</label>
+		<description>.</description>
+		<possessionCount>1</possessionCount>
+		<recipeMaker>
+			<recipeUsers>
+				<li>ElectricSmithy</li>
+				<li>FueledSmithy</li>
+			</recipeUsers>
+			<researchPrerequisite>PlateArmor</researchPrerequisite>
+			<unfinishedThingDef>UnfinishedMetallicTechArmor</unfinishedThingDef>
+			<skillRequirements>
+				<Crafting>7</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<techLevel>Medieval</techLevel>
+		<costStuffCount>70</costStuffCount>
+		<stuffCategories>
+			<li>Metallic</li>
+		</stuffCategories>
+		<statBases>
+			<MaxHitPoints>150</MaxHitPoints>
+			<WorkToMake>10000</WorkToMake>
+			<Mass>3.2</Mass>
+			<StuffEffectMultiplierArmor>0.95</StuffEffectMultiplierArmor>
+			<StuffEffectMultiplierInsulation_Cold>0.12</StuffEffectMultiplierInsulation_Cold>
+			<StuffEffectMultiplierInsulation_Heat>0.12</StuffEffectMultiplierInsulation_Heat>
+			<EquipDelay>1</EquipDelay>
+		</statBases>
+		<thingCategories>
+			<li>ApparelArmor</li>
+		</thingCategories>
+		<apparel>
+			<useWornGraphicMask>true</useWornGraphicMask>
+      		<parentTagDef>ApparelHead</parentTagDef>
+			<bodyPartGroups>
+				<li>FullHead</li>
+				<li>Neck</li>
+			</bodyPartGroups>
+			<layers>
+				<li>Overhead</li>
+			</layers>
+			<tags>
+				<li>MedievalMilitary</li>
+				<li>MedievalArmorDecent</li>
+				<li MayRequire="Ludeon.RimWorld.Royalty">Royal</li>
+				<li MayRequire="Ludeon.RimWorld.Royalty">RoyalTier2</li>
+				<li MayRequire="Ludeon.RimWorld.Royalty">RoyalTier5</li>
+			</tags>
+			<defaultOutfitTags>
+				<li>Soldier</li>
+			</defaultOutfitTags>
+		</apparel>
+		<colorGenerator Class="ColorGenerator_StandardApparel" />
+		<tradeTags>
+			<li>Clothing</li>
+			<li>Armor</li>
+		</tradeTags>
+	</ThingDef>
+
+	
+	<ThingDef ParentName="TA_IronPagoda">
+		<defName>TA_IronPagodaClosed</defName>
+		<graphicData>
+			<texPath>Apparel/Helmets/TA_IronPagoda/TA_IronPagodaClosed</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<apparel>
+			<wornGraphicPath>Apparel/Helmets/TA_IronPagoda/TA_IronPagodaClosed</wornGraphicPath>
+		</apparel>
+		<comps>
+			<li Class="VEF.Apparels.CompProperties_SwitchApparel" MayRequire="oskarpotocki.vanillafactionsexpanded.core">
+				<SwitchTo>TA_IronPagodaOpen</SwitchTo>
+				<graphicPath>Apparel/Helmets/TA_IronPagoda/TA_IronPagodaOpen</graphicPath>
+				<Label>open visor</Label>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<ThingDef ParentName="TA_IronPagoda">
+		<defName>TA_IronPagodaOpen</defName>
+		<graphicData>
+			<texPath>Apparel/Helmets/TA_IronPagoda/TA_IronPagodaOpen</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<recipeMaker Inherit="False" />
+		<apparel>
+			<wornGraphicPath>Apparel/Helmets/TA_IronPagoda/TA_IronPagodaOpen</wornGraphicPath>
+		</apparel>
+		<comps>
+			<li Class="VEF.Apparels.CompProperties_SwitchApparel" MayRequire="oskarpotocki.vanillafactionsexpanded.core">
+				<SwitchTo>TA_IronPagodaClosed</SwitchTo>
+				<graphicPath>Apparel/Helmets/TA_IronPagoda/TA_IronPagodaClosed</graphicPath>
+				<Label>close visor</Label>
+			</li>
+		</comps>
+	</ThingDef>
+	
+</Defs>
